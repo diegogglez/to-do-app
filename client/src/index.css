@@ -29,6 +29,70 @@ body {
   font-size: 10px;
 }
 
+/* buttons */
+
+.edit {
+  border: 1.5px solid rgb(141, 181, 145);
+  color: rgb(141, 181, 145);
+  text-transform: uppercase;
+}
+
+.edit:hover {
+  background-color: rgb(182, 223, 186);;
+}
+
+.edit:active {
+  color: whitesmoke;
+  background-color: rgb(141, 181, 145);
+  
+}
+
+.delete {
+  border: 1.5px solid rgb(255, 175, 163);
+  color: rgb(255, 175, 163);
+  text-transform: uppercase;
+}
+
+.delete:hover {
+  background-color: rgb(255, 201, 193);
+}
+
+.delete:active {
+  background-color: rgb(255, 175, 163);
+  color: whitesmoke;
+}
+
+.create {
+  border: 1.5px solid rgb(108, 115, 148);
+  color: rgb(108, 115, 148);
+  text-transform: uppercase;
+}
+
+.create:hover {
+  background-color: rgb(131, 138, 172);
+}
+
+.create:active {
+  background-color: rgb(108, 115, 148);
+  color: whitesmoke;
+}
+
+.signout {
+  border: 1.5px solid rgb(255, 175, 163);
+  color: rgb(255, 175, 163);
+  text-transform: uppercase;
+}
+
+.signout:hover {
+  background-color: rgb(175, 94, 94);
+  border: 1.5px solid rgb(175, 94, 94);
+}
+
+.signout:active {
+  background-color: rgb(175, 94, 94);
+  color: whitesmoke;
+}
+
 /* list-header */
 
 .list-header {
