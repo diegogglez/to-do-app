@@ -1,4 +1,5 @@
 import React from 'react'
+import Modal from './Modal';
 
 const signOut = () => {
   console.log('singout');
@@ -11,7 +12,8 @@ const ListHeader = ({ listName }) => {
       <div className='button-container'>
         <button className='create'>AD NEW</button>
         <button className='signout' onClick={signOut}>SIGN OUT</button>
-      </div>        
+      </div>     
+      <Modal/>   
     </div>
   )
 }
