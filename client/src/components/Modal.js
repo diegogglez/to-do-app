@@ -2,7 +2,7 @@ import React from 'react'
 
 const Modal = () => {
 
-  const mode = 'create';
+  const mode = 'edit';
 
   const handleChange = () => {
     console.log('changing!');
