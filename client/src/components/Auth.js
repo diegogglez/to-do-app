@@ -18,7 +18,7 @@ const Auth = () => {
           <input type='email' placeholder='email'/>
           <input type='password' placeholder='password'/>
           { !isLogIn && <input type='password' placeholder='confirm password'/>}
-          <imput type='submit' className='create'/>
+          <input type='submit' className='create'/>
           {error && <p>{error}</p>}
         </form>
         <div className='auth-options'>
