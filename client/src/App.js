@@ -11,7 +11,7 @@ const App = () => {
   
   const getData = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/todos/${userEmail}`);
+      const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/todos/${userEmail}`);
       const json = await response.json();
       setTask(json);
     } catch (err) {
@@ -19,7 +19,11 @@ const App = () => {
     }
   }
 
-  useEffect(() => getData, []);
+  useEffect(() => {
+    if(authToken) {
+      getData();
+    }
+  }, []);
 
   console.log(task);
 
