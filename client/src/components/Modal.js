@@ -15,13 +15,30 @@ const Modal = ({ mode, setShowModal, getData, task }) => {
   const postData = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:8000/todos`, {
+      const response = await fetch(`http://localhost:5000/todos`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       });
       if (response.status === 200) {
         console.log('WORKED');
+        setShowModal(false);
+        getData();
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  const editData = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(`http://localhost:5000/todos/${task.id}`, {
+        method: "PUT",
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(data)
+        })
+      if (response.status === 200) {
         setShowModal(false);
         getData();
       }
@@ -70,7 +87,7 @@ const Modal = ({ mode, setShowModal, getData, task }) => {
           <input 
             className={mode}
             type="submit"
-            onClick={!editMode && postData}></input>
+            onClick={editMode ? editData : postData}></input>
         </form>
       </div>
     </div>

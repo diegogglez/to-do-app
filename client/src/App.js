@@ -8,7 +8,7 @@ const App = () => {
   
   const getData = async () => {
     try {
-      const response = await fetch(`http://localhost:8000/todos/${userEmail}`);
+      const response = await fetch(`http://localhost:5000/todos/${userEmail}`);
       const json = await response.json();
       setTask(json);
     } catch (err) {

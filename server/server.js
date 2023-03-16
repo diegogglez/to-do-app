@@ -1,4 +1,5 @@
-const PORT = process.env.PORT || 8000;
+const env = require('./environment');
+const PORT = env.PORT || 8000;
 const express = require('express');
 const { v4: uuidv4 } = require('uuid');
 const cors = require('cors');
@@ -49,5 +50,20 @@ app.post('/todos', async (req, res) => {
     console.error(err);
   }
 })
+
+//* Edit a todo
+app.put('/todos/:id', async (req, res) => {
+  const  { id } = req.params;
+  const { user_email, title, progress, date } = req.body;
+  try {
+    const editTodo = await pool.query(
+      'UPDATE todos SET user_email = $1, title = $2, progress = $3, date = $4 WHERE id = $5;',
+      [user_email, title, progress, date, id]
+      );
+      res.json(editTodo);
+    } catch (err) {
+      console.error(err);
+    }
+  })
 
 app.listen(PORT, () => console.log(`server running on PORT -> ${PORT}`));
