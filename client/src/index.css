@@ -207,3 +207,9 @@ input {
   padding: 10px;
   color: rgb(35, 38, 47);
 }
+
+.user-email {
+  float: right;
+  margin: 10px;
+  color: rgb(114, 114, 144);
+}

@@ -38,6 +38,7 @@ const App = () => {
       {authToken &&
         <>
         <ListHeader listName={'Holiday tick list'} getData={getData}></ListHeader>
+        <p className='user-email'>Welcome back {userEmail}</p>
         {sortedTask?.map((task) => <ListItem key={task.id} task={task} getData={getData}></ListItem>)}
         </>}
     </div>
