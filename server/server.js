@@ -11,20 +11,12 @@ const jwt = require('jsonwebtoken')
 app.use(cors());
 app.use(express.json());
 
-//* get all todo
-app.get('/todos/', async (req, res) => {
-
-  const { userEmail } = req.params;
-  
-  try {
-    const todos = await pool.query('SELECT * FROM todos');
-    res.json(todos.rows);
-  } catch(err) {
-    console.error(err);
-  }
+//* server working test
+app.get('/', async (req, res) => {
+  res.send('Server Working!')
 });
 
-//* get one todo
+//* get all todos
 app.get('/todos/:userEmail', async (req, res) => {
 
   const { userEmail } = req.params;
@@ -82,9 +74,10 @@ app.delete('/todos/:id', async(req, res) => {
 //* Sign Up
 app.post('/signup', async(req, res) => {
   const { email, password } = req.body;
-  const salt = bcrypt.genSaltSync(10);
-  const hashedPassword = bcrypt.hashSync(password, salt)
+
   try {
+    const salt = bcrypt.genSaltSync(10);
+    const hashedPassword = bcrypt.hashSync(password, salt);
     const signUp = await pool.query(
       `INSERT INTO users (email, hashed_password) VALUES($1, $2)`, 
       [email, hashedPassword]);
