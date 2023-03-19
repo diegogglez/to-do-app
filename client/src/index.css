@@ -131,6 +131,10 @@ input {
   margin-left: 10px;
 }
 
+.task-title {
+  width: 300px;
+}
+
 /* Modal */
 
 .overlay {
@@ -212,4 +216,18 @@ input {
   float: right;
   margin: 10px;
   color: rgb(114, 114, 144);
+}
+
+/* progress bar */
+
+.outer-bar {
+  width: 200px;
+  height: 14px;
+  background-color: rgb(216, 216, 216);
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.inner-bar {
+  height: 100%;
 }
